@@ -1,0 +1,39 @@
+Game : FindFire
+
+class Game
+{
+public:
+    Init();
+    Update();
+    Draw();
+    Close();
+    bool IsDone() const { return isDone; }
+private:    
+    World
+    player position
+    isDone
+    +
+    level check
+    current level
+    +
+    torch, coin, ....
+};
+
+int main()
+{
+    Game game;
+
+    game.Init(); // map generation, player position initialize
+    while(!game.IsDone())
+    {
+        game.Update();  // map loading, movement, sight, torch/coin count, portal,
+        Draw(); 
+        // movement(input -> player position->reaction(torch/coin, portal) -> if needed(portal->map loading) -> sight)
+    }
+    game.Close(); //  clean up everything if needed
+}
+
+1. map generation -> simple wall
+2. player movement
+3. coin / torch count
+4. portal or torch(sight)
