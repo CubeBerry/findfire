@@ -1,9 +1,36 @@
 #include <iostream>
+#include <Windows.h>
+
+enum Color
+{
+	BLACK,
+	BLUE,
+	GREEN,
+	CYAN,
+	RED,
+	MAGENTA,
+	BROWN,
+	LIGHTGRAY,
+	DARKGRAY,
+	LIGHTBLUE,
+	LIGHTGREEN,
+	LIGHTCYAN,
+	LIGHTRED,
+	LIGHTMAGENTA,
+	YELLOW,
+	WHITE
+};
+
+void textcolor(int foreground, int background)
+{
+	int color = foreground + background * 16;
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+}
 
 class Game
 {
 public:
-	void Init()//map generation, movement, sight, torch/coin count, portal
+	void Init()//map generation, player position initialize
 	{
 		int i, j;
 
@@ -11,7 +38,7 @@ public:
 		{
 			for (j = 1; j < 22; j++)
 			{
-				World[i][j] = '0';
+				World[i][j] = ' ';
 			}
 		}
 
@@ -46,7 +73,16 @@ public:
 		{
 			for (j = 0; j < 23; j++)
 			{
-				std::cout << World[i][j];
+				if (World[i][j] == ' ')
+				{
+					textcolor(BLACK, GREEN);//text color, background color
+					std::cout << World[i][j];
+				}
+				else
+				{
+					textcolor(BLACK, LIGHTGRAY);
+					std::cout << World[i][j];
+				}
 			}
 			std::cout << std::endl;
 		}
