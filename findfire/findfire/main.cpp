@@ -1,4 +1,6 @@
 #include <iostream>
+#include <Windows.h>
+#include <conio.h>
 #include "game.h"
 
 int main()
@@ -8,6 +10,5 @@ int main()
 	while (g.isDone())
 	{
 		g.Update();
-		g.Draw();
 	}
 }
