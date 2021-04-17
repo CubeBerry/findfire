@@ -5,7 +5,7 @@ public:
 
 	void Update();//map loading, movement, sight, torch/coin count, portal
 
-	void Draw();
+	void Draw();//draw map
 
 	//Close();
 	bool isDone() const
@@ -27,6 +27,10 @@ private:
 	const char coin_shape = '$';
 	int torch = 5;
 	const char torch_shape = 'T';
+
+	//item count
+	int coin_count = 0;
+	int sight = 30;
 
 	//character position
 	const char character_pos = 'P';

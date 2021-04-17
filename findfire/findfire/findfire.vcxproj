@@ -139,9 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="initialize.h" />
+    <ClCompile Include="draw.cpp" />
+    <ClCompile Include="initialize.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="upadate.h" />
+    <ClCompile Include="update.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h" />
