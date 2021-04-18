@@ -51,6 +51,26 @@ void Game::Draw()
 				textcolor(BLACK, GREEN);//text color, background color
 				std::cout << World[i][j];
 			}
+			else if (World[i][j] == character_pos)
+			{
+				textcolor(BLACK, GREEN);
+				std::cout << World[i][j];
+			}
+			else if (World[i][j] == coin_shape)
+			{
+				textcolor(YELLOW, GREEN);
+				std::cout << World[i][j];
+			}
+			else if (World[i][j] == torch_shape)
+			{
+				textcolor(RED, GREEN);
+				std::cout << World[i][j];
+			}
+			else if (World[i][j] == portal_shape)
+			{
+				textcolor(YELLOW, BLUE);
+				std::cout << World[i][j];
+			}
 			else
 			{
 				textcolor(BLACK, LIGHTGRAY);
@@ -64,4 +84,5 @@ void Game::Draw()
 	textcolor(WHITE, BLACK);
 	std::cout << "Coin : " << coin_count << std::endl;
 	std::cout << "Sight : " << sight << std::endl;
+	std::cout << "Level : " << current_level + 1;
 }

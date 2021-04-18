@@ -34,9 +34,9 @@ void Game::Init()//map generation, player position initialize
 	{
 		World[22][i] = '@';
 	}
-	//------------------------
+	//-----------------------
 
-	//character
+	//character initial position
 	World[character_x][character_y] = character_pos;
 
 	//random--------------------------------------------
@@ -61,5 +61,10 @@ void Game::Init()//map generation, player position initialize
 		{
 			World[dist1(rng)][dist1(rng)] = torch_shape;
 		}
+	}
+
+	if (World[dist1(rng)][dist1(rng)] == 32)//portal
+	{
+		World[dist1(rng)][dist1(rng)] = portal_shape;
 	}
 }

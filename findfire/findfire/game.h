@@ -22,11 +22,12 @@ private:
 	};
 	int current_level = level_1;
 
-	//coin and torch
+	//coin and torch and portal
 	int coin = 5;
 	const char coin_shape = '$';
 	int torch = 5;
 	const char torch_shape = 'T';
+	const char portal_shape = 'O';
 
 	//item count
 	int coin_count = 0;

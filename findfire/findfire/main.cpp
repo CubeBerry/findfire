@@ -3,6 +3,7 @@
 int main()
 {
 	Game g;
+
 	g.Init();
 	while (g.isDone())
 	{
