@@ -4,7 +4,7 @@
 #include <conio.h>
 #include <random>
 
-void Game::Init()//map generation, player position initialize
+void Game::Init(int coin, int torch)//map generation, player position initialize
 {
 	int i, j;
 

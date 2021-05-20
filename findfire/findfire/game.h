@@ -1,7 +1,19 @@
+struct level_1_item
+{
+	int coin;
+	int torch;
+};
+
+struct level_2_item
+{
+	int coin;
+	int torch;
+};
+
 class Game
 {
 public:
-	void Init();//map generation, player position initialize
+	void Init(int coin, int torch);//map generation, player position initialize
 
 	void Update();//map loading, movement, sight, torch/coin count, portal
 
@@ -23,15 +35,16 @@ private:
 	int current_level = level_1;
 
 	//coin and torch and portal
-	int coin = 5;
 	const char coin_shape = '$';
-	int torch = 5;
 	const char torch_shape = 'T';
 	const char portal_shape = 'O';
 
 	//item count
 	int coin_count = 0;
 	int sight = 30;
+
+	level_1_item l1{ 5,5 };
+	level_2_item l2{ 8,8 };
 
 	//character position
 	const char character_pos = 'P';

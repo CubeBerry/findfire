@@ -1,6 +1,7 @@
 ﻿  draw.cpp
+C:\Users\ymjgo\OneDrive\Digipen\과외\findfire\findfire\draw.cpp(30,59): warning C4244: 'argument': conversion from 'int' to 'WORD', possible loss of data
   initialize.cpp
   main.cpp
   update.cpp
   Generating Code...
-  findfire.vcxproj -> C:\Users\ymjgo\Desktop\findfire\findfire\findfire\Debug\findfire.exe
+  findfire.vcxproj -> C:\Users\ymjgo\OneDrive\Digipen\과외\findfire\Debug\findfire.exe

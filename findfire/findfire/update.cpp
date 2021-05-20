@@ -29,6 +29,14 @@ void Game::Update()//map loading, movement, sight, torch/coin count, portal
 				World[character_x + 1][character_y] = ' ';
 				coin_count++;
 				sight--;
+				if (current_level == level_1)
+				{
+					l1.coin--;
+				}
+				else if (current_level == level_2)
+				{
+					l2.coin--;
+				}
 			}
 			else if (World[character_x - 1][character_y] == torch_shape)
 			{
@@ -36,6 +44,14 @@ void Game::Update()//map loading, movement, sight, torch/coin count, portal
 				World[character_x + 1][character_y] = ' ';
 				sight--;
 				sight += 24;
+				if (current_level == level_1)
+				{
+					l1.torch--;
+				}
+				else if (current_level == level_2)
+				{
+					l2.torch--;
+				}
 			}
 			else if (World[character_x - 1][character_y] == portal_shape)
 			{
@@ -51,26 +67,22 @@ void Game::Update()//map loading, movement, sight, torch/coin count, portal
 					current_level++;
 				}
 				//portal activate
-				switch(current_level)
+				switch (current_level)
 				{
-					case level_1:
-						coin = 5;
-						torch = 5;
-						Init();
-						while (isDone())
-						{
-							Update();
-							Draw();
-						}
-					case level_2:
-						coin = 8;
-						torch = 8;
-						Init();
-						while (isDone())
-						{
-							Update();
-							Draw();
-						}
+				case level_1:
+					Init(l1.coin, l1.torch);
+					while (isDone())
+					{
+						Update();
+						Draw();
+					}
+				case level_2:
+					Init(l2.coin, l2.torch);
+					while (isDone())
+					{
+						Update();
+						Draw();
+					}
 				}
 			}
 		}
@@ -89,6 +101,14 @@ void Game::Update()//map loading, movement, sight, torch/coin count, portal
 				World[character_x - 1][character_y] = ' ';
 				coin_count++;
 				sight--;
+				if (current_level == level_1)
+				{
+					l1.coin--;
+				}
+				else if (current_level == level_2)
+				{
+					l2.coin--;
+				}
 			}
 			else if (World[character_x + 1][character_y] == torch_shape)
 			{
@@ -96,6 +116,14 @@ void Game::Update()//map loading, movement, sight, torch/coin count, portal
 				World[character_x - 1][character_y] = ' ';
 				sight--;
 				sight += 24;
+				if (current_level == level_1)
+				{
+					l1.torch--;
+				}
+				else if (current_level == level_2)
+				{
+					l2.torch--;
+				}
 			}
 			else if (World[character_x + 1][character_y] == portal_shape)
 			{
@@ -114,18 +142,14 @@ void Game::Update()//map loading, movement, sight, torch/coin count, portal
 				switch (current_level)
 				{
 				case level_1:
-					coin = 5;
-					torch = 5;
-					Init();
+					Init(l1.coin, l1.torch);
 					while (isDone())
 					{
 						Update();
 						Draw();
 					}
 				case level_2:
-					coin = 8;
-					torch = 8;
-					Init();
+					Init(l2.coin, l2.torch);
 					while (isDone())
 					{
 						Update();
@@ -149,6 +173,14 @@ void Game::Update()//map loading, movement, sight, torch/coin count, portal
 				World[character_x][character_y + 1] = ' ';
 				coin_count++;
 				sight--;
+				if (current_level == level_1)
+				{
+					l1.coin--;
+				}
+				else if (current_level == level_2)
+				{
+					l2.coin--;
+				}
 			}
 			else if (World[character_x][character_y - 1] == torch_shape)
 			{
@@ -156,6 +188,14 @@ void Game::Update()//map loading, movement, sight, torch/coin count, portal
 				World[character_x][character_y + 1] = ' ';
 				sight--;
 				sight += 24;
+				if (current_level == level_1)
+				{
+					l1.torch--;
+				}
+				else if (current_level == level_2)
+				{
+					l2.torch--;
+				}
 			}
 			else if (World[character_x][character_y - 1] == portal_shape)
 			{
@@ -174,18 +214,14 @@ void Game::Update()//map loading, movement, sight, torch/coin count, portal
 				switch (current_level)
 				{
 				case level_1:
-					coin = 5;
-					torch = 5;
-					Init();
+					Init(l1.coin, l1.torch);
 					while (isDone())
 					{
 						Update();
 						Draw();
 					}
 				case level_2:
-					coin = 8;
-					torch = 8;
-					Init();
+					Init(l2.coin, l2.torch);
 					while (isDone())
 					{
 						Update();
@@ -209,6 +245,14 @@ void Game::Update()//map loading, movement, sight, torch/coin count, portal
 				World[character_x][character_y - 1] = ' ';
 				coin_count++;
 				sight--;
+				if (current_level == level_1)
+				{
+					l1.coin--;
+				}
+				else if (current_level == level_2)
+				{
+					l2.coin--;
+				}
 			}
 			else if (World[character_x][character_y + 1] == torch_shape)
 			{
@@ -216,6 +260,14 @@ void Game::Update()//map loading, movement, sight, torch/coin count, portal
 				World[character_x][character_y - 1] = ' ';
 				sight--;
 				sight += 24;
+				if (current_level == level_1)
+				{
+					l1.torch--;
+				}
+				else if (current_level == level_2)
+				{
+					l2.torch--;
+				}
 			}
 			else if (World[character_x][character_y + 1] == portal_shape)
 			{
@@ -234,18 +286,14 @@ void Game::Update()//map loading, movement, sight, torch/coin count, portal
 				switch (current_level)
 				{
 				case level_1:
-					coin = 5;
-					torch = 5;
-					Init();
+					Init(l1.coin, l1.torch);
 					while (isDone())
 					{
 						Update();
 						Draw();
 					}
 				case level_2:
-					coin = 8;
-					torch = 8;
-					Init();
+					Init(l2.coin, l2.torch);
 					while (isDone())
 					{
 						Update();
@@ -254,5 +302,10 @@ void Game::Update()//map loading, movement, sight, torch/coin count, portal
 				}
 			}
 		}
+	}
+
+	if (sight == 0 || coin_count == 13)//game over
+	{
+		id = false;
 	}
 }
