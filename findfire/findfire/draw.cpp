@@ -24,22 +24,31 @@ enum Color
 	WHITE
 };
 
+//text and background color
 void textcolor(int foreground, int background)
 {
 	int color = foreground + background * 16;
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }
 
+//clear screen
 void ClearScreen()
 {
 	COORD cursorPosition;	cursorPosition.X = 0;	cursorPosition.Y = 0;	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cursorPosition);
+}
+
+//move to x,y position
+void gotoxy(int x, int y)
+{
+	COORD pos = { x,y };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
 
 void Game::Draw()
 {
 	//system("cls");
 	ClearScreen();
-	//map writing
+	//map darwing
 	int i, j;
 
 	for (i = 0; i < 23; i++)
@@ -49,33 +58,28 @@ void Game::Draw()
 			if (World[i][j] == ' ')
 			{
 				textcolor(BLACK, GREEN);//text color, background color
-				std::cout << World[i][j];
 			}
 			else if (World[i][j] == character_pos)
 			{
 				textcolor(BLACK, GREEN);
-				std::cout << World[i][j];
 			}
 			else if (World[i][j] == coin_shape)
 			{
 				textcolor(YELLOW, GREEN);
-				std::cout << World[i][j];
 			}
 			else if (World[i][j] == torch_shape)
 			{
 				textcolor(RED, GREEN);
-				std::cout << World[i][j];
 			}
 			else if (World[i][j] == portal_shape)
 			{
 				textcolor(YELLOW, BLUE);
-				std::cout << World[i][j];
 			}
 			else
 			{
 				textcolor(BLACK, LIGHTGRAY);
-				std::cout << World[i][j];
 			}
+			std::cout << World[i][j];
 		}
 		std::cout << std::endl;
 	}

@@ -1,7 +1,7 @@
 ﻿  draw.cpp
-C:\Users\ymjgo\OneDrive\Digipen\과외\findfire\findfire\draw.cpp(30,59): warning C4244: 'argument': conversion from 'int' to 'WORD', possible loss of data
-  initialize.cpp
-  main.cpp
-  update.cpp
-  Generating Code...
+C:\Users\ymjgo\OneDrive\Digipen\과외\findfire\findfire\draw.cpp(31,59): warning C4244: 'argument': conversion from 'int' to 'WORD', possible loss of data
+C:\Users\ymjgo\OneDrive\Digipen\과외\findfire\findfire\draw.cpp(43,16): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\ymjgo\OneDrive\Digipen\과외\findfire\findfire\draw.cpp(43,16): warning C4244: 'initializing': conversion from 'int' to 'SHORT', possible loss of data
+C:\Users\ymjgo\OneDrive\Digipen\과외\findfire\findfire\draw.cpp(43,18): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+C:\Users\ymjgo\OneDrive\Digipen\과외\findfire\findfire\draw.cpp(43,18): warning C4244: 'initializing': conversion from 'int' to 'SHORT', possible loss of data
   findfire.vcxproj -> C:\Users\ymjgo\OneDrive\Digipen\과외\findfire\Debug\findfire.exe
