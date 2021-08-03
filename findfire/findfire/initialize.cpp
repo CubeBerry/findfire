@@ -3,6 +3,7 @@
 #include <Windows.h>
 #include <conio.h>
 #include <random>
+#include <cmath>
 
 void Game::Init(int coin, int torch)//map generation, player position initialize
 {

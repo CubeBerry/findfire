@@ -3,6 +3,7 @@
 #include <Windows.h>
 #include <conio.h>
 #include <random>
+#include <cmath>
 
 #define UP 119
 #define DOWN 115

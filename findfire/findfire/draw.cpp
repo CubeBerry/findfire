@@ -3,6 +3,7 @@
 #include <Windows.h>
 #include <conio.h>
 #include <random>
+#include <cmath>
 
 enum Color
 {
@@ -51,33 +52,42 @@ void Game::Draw()
 	//map darwing
 	int i, j;
 
+	int sight_distance = sight / 3;
+
 	for (i = 0; i < 23; i++)
 	{
 		for (j = 0; j < 23; j++)
 		{
-			if (World[i][j] == ' ')
+			if ((abs(character_x - i) + abs(character_y - j)) <= sight_distance)
 			{
-				textcolor(BLACK, GREEN);//text color, background color
-			}
-			else if (World[i][j] == character_pos)
-			{
-				textcolor(BLACK, GREEN);
-			}
-			else if (World[i][j] == coin_shape)
-			{
-				textcolor(YELLOW, GREEN);
-			}
-			else if (World[i][j] == torch_shape)
-			{
-				textcolor(RED, GREEN);
-			}
-			else if (World[i][j] == portal_shape)
-			{
-				textcolor(YELLOW, BLUE);
+				if (World[i][j] == ' ')
+				{
+					textcolor(BLACK, GREEN);//text color, background color
+				}
+				else if (World[i][j] == character_pos)
+				{
+					textcolor(BLACK, GREEN);
+				}
+				else if (World[i][j] == coin_shape)
+				{
+					textcolor(YELLOW, GREEN);
+				}
+				else if (World[i][j] == torch_shape)
+				{
+					textcolor(RED, GREEN);
+				}
+				else if (World[i][j] == portal_shape)
+				{
+					textcolor(YELLOW, BLUE);
+				}
+				else if (World[i][j] == '@')
+				{
+					textcolor(BLACK, LIGHTGRAY);
+				}
 			}
 			else
 			{
-				textcolor(BLACK, LIGHTGRAY);
+				textcolor(BLACK, BLACK);
 			}
 			std::cout << World[i][j];
 		}
