@@ -29,7 +29,7 @@ enum Color
 void textcolor(int foreground, int background)
 {
 	int color = foreground + background * 16;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), static_cast<WORD>(color));
 }
 
 //clear screen
@@ -41,7 +41,7 @@ void ClearScreen()
 //move to x,y position
 void gotoxy(int x, int y)
 {
-	COORD pos = { x,y };
+	COORD pos = { static_cast<SHORT>(x),static_cast<SHORT>(y) };
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
 
